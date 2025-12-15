@@ -1,14 +1,16 @@
+// import express
 const express = require("express");
 const cors = require("cors");
 
+// create app
 const app = express();
 const PORT = 5000;
 
-// Middleware
+// middleware
 app.use(cors());
 app.use(express.json());
 
-// GET API
+// simple GET API
 app.get("/api/users", (req, res) => {
   res.json([
     { id: 1, name: "Krish" },
@@ -17,7 +19,7 @@ app.get("/api/users", (req, res) => {
   ]);
 });
 
-// Start Server
+// start server
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log("Backend running on http://localhost:5000");
 });
